@@ -1,0 +1,239 @@
+$left-bg-color: rgba(85, 84, 236, 0.7);
+$right-bg-color: rgba(200, 106, 44, 0.8);
+$btn-hover-bg: #181618;
+$hover-width: 65%;
+$other-width: 35%;
+$mobile-hover-height: 65%;
+$mobile-other-height: 35%;
+  
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Roboto, sans-serif;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+
+}
+
+h1{
+  font-size: 4.5rem;
+  color:#fff;
+  white-space: no-wrap;
+  position: relative;
+  margin: 1rem 0;  
+}
+  
+.container{
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+}
+  
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  border: #fff solid 0.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1rem;
+  width: 10rem;
+  max-width: 12rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+  
+
+.hover-left {
+  & .left{
+    width: $hover-width;
+  }
+}
+
+.hover-left {
+  & .right{
+    width: $other-width;
+  }
+}
+
+.hover-right {
+  & .left{
+    width: $other-width;
+  }
+}
+
+
+.hover-right {
+  & .right{
+    width: $hover-width;  
+  }
+}
+ 
+
+.split.right, 
+.split.left,
+.split.left::before,
+.split.right::before{
+  transition: 2s
+}
+
+
+
+.split{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.split.left{
+  left:0;
+  background: url('https://www.happyideasblog.com/wp-content/uploads/Adidas-Shoes-For-Your-Street-Fashion.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.left::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $left-bg-color;
+}
+
+.split.right{
+  right:0;
+  background: url('https://sneakerbardetroit.com/wp-content/uploads/2016/02/nike-red-carpet-runner-collection-3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.right::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $right-bg-color;
+}
+
+.left{
+  .btn:hover{
+    background-color: $btn-hover-bg;
+    border: $btn-hover-bg solid 0.2rem;
+  }
+}
+    
+.right{
+  .btn:hover{
+    background-color: $btn-hover-bg;
+    border: $btn-hover-bg  solid 0.2rem;
+  }
+}
+
+@media (max-width: 360px){
+
+  h1{
+    margin: 0 0 .2rem 0;
+    font-size: 3rem;
+
+  }
+
+  .btn {
+    padding: .6rem;
+  }
+
+  .split{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+  }
+
+  .hover-left{
+    & .left{
+      width: 100%;
+      height: 70%;
+    }
+  }
+
+  .hover-left{
+    & .right{
+      width: 100%;
+      height: 30%;
+    }
+  }
+  
+  .hover-right{
+    & .left{
+      width: 100%;
+      height: 30%;
+    }
+  }
+
+  .hover-right{
+    & .right{
+      width: 100%;
+      height: 70%;
+    }
+  }
+}
+
+@media (max-width: 640px){
+  h1{
+    margin: 0 0 .2rem 0;
+    font-size: 3rem;
+  }
+
+  .split{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+  }
+
+  .btn {
+    padding: .6rem;
+    width: 8rem;
+  }
+
+  .hover-left{
+    & .left{
+      width: 100%;
+      height: 65%;
+    }
+  }
+
+  .hover-left{
+    & .right{
+      width: 100%;
+      height: 35%;
+    }
+  }
+  
+  .hover-right{
+    & .left{
+      width: 100%;
+      height: 35%;
+    }
+  }
+
+  .hover-right{
+    & .right{
+      width: 100%;
+      height: 65%;
+    }
+  }
+}
+  
